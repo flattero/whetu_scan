@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Matariki Game</title>
-  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/tesseract.js@4/dist/tesseract.min.js"></script>
 </head>
 <body class="bg-gradient-to-b from-blue-700 to-indigo-900 text-white font-sans">
@@ -17,7 +17,7 @@
   </div>
 
   <!-- SCAN SCREEN -->
-  <div id="scanScreen" class="screen hidden flex-col items-center justify-center min-h-screen space-y-4">
+  <div id="scanScreen" class="screen hidden flex flex-col items-center justify-center min-h-screen space-y-4">
     <video id="cameraFeed" autoplay playsinline class="rounded border-4 border-yellow-400 w-80 h-56"></video>
     <div id="scanStatus" class="text-lg text-yellow-200"></div>
     <button id="retryButton" class="hidden bg-yellow-500 px-4 py-2 rounded">Try Again</button>
