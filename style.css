@@ -1,12 +1,10 @@
-/* General layout for all screens */
 body {
   margin: 0;
-  font-family: 'Fredoka One', cursive, sans-serif;
-  background-color: #1e3a8a;
-  overflow: hidden;
+  font-family: 'Fredoka One', cursive;
+  background: linear-gradient(to bottom, #1e3a8a, #312e81);
+  color: white;
 }
 
-/* Hide screens by default */
 .screen {
   display: none;
 }
@@ -15,51 +13,10 @@ body {
   display: flex !important;
 }
 
-/* Buttons */
 button {
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  font-weight: bold;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
-  transform: scale(1.05);
-}
-
-/* Leaderboard List */
-#leaderboardList {
-  list-style-type: none;
-}
-
-#leaderboardList li {
-  display: flex;
-  justify-content: space-between;
-  padding: 4px 8px;
-  background-color: #f0f0f0;
-  border-radius: 4px;
-}
-
-/* Video camera feed */
-#cameraFeed {
-  box-shadow: 0 0 10px 3px #facc15;
-}
-
-/* Game canvas */
-#gameCanvas {
-  background-color: #000;
-  display: block;
-  margin-top: 2rem;
-}
-
-/* Countdown on welcome screen */
-#countdown {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #facc15;
-  animation: pulse 1s infinite;
-}
-
-@keyframes pulse {
-  0% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.2); opacity: 0.7; }
-  100% { transform: scale(1); opacity: 1; }
+  filter: brightness(1.1);
 }
