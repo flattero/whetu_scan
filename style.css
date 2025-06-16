@@ -1,0 +1,129 @@
+body {
+  margin: 0;
+  background-color: #000;
+  font-family: 'Fredoka One', cursive;
+  color: #fff;
+  overflow: hidden; /* Prevents scrollbars */
+}
+
+/* Base styles for all screen overlays */
+.screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+#homeScreen {
+  background-image: url('background1b.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.title-main {
+  font-size: 2.5em;
+  color: #FFD700;
+  text-shadow: 2px 2px 4px #000;
+  margin-bottom: 0;
+}
+
+.title-sub {
+  font-size: 1.5em;
+  margin-top: 5px;
+}
+
+.leaderboard {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid #FFD700;
+  border-radius: 10px;
+  padding: 10px 30px;
+  margin-top: 20px;
+  width: 80%;
+  max-width: 300px;
+}
+
+.leaderboard h3 {
+  margin-top: 0;
+  border-bottom: 1px solid #FFD700;
+  padding-bottom: 5px;
+}
+
+.leaderboard ol {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+
+.leaderboard li {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0;
+  font-size: 1.2em;
+}
+
+.btn {
+  font-family: 'Fredoka One', cursive;
+  font-size: 1.2em;
+  padding: 10px 20px;
+  margin-top: 20px;
+  border-radius: 8px;
+  border: 2px solid #FFD700;
+  background-color: #000;
+  color: #FFD700;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn:hover {
+  background-color: #FFD700;
+  color: #000;
+}
+
+#cameraFeed {
+  border: 2px solid #fff;
+  border-radius: 10px;
+  margin-top: 15px;
+  background-color: #333;
+}
+
+.input-group {
+    display: flex;
+    margin-top: 15px;
+}
+
+#playerNameInput {
+    padding: 10px;
+    border: 2px solid #FFD700;
+    border-radius: 8px 0 0 8px;
+    background-color: #333;
+    color: #fff;
+    font-size: 1em;
+}
+
+#submitNameButton {
+    margin-top: 0;
+    border-radius: 0 8px 8px 0;
+}
+
+#countdown {
+    font-size: 6em;
+    color: #FFD700;
+}
+
+#gameCanvas {
+  display: none; /* Initially hidden */
+  border: 1px solid #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

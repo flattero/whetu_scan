@@ -1,0 +1,9 @@
+
+body {
+  margin: 0;
+  background-color: #000;
+  font-family: 'Fredoka One', cursive;
+}
+#gameCanvas {
+  display: none;
+}

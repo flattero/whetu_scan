@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hopukina ngā Whetū o Matariki</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #000;
+        }
+        canvas {
+            border: 1px solid #fff;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="gameCanvas" width="400" height="600"></canvas>
+
+    <!-- Audio Elements -->
+    <audio id="backgroundMusic" loop>
+        <source src="background_music.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="tipuanukuAudio">
+        <source src="Tipuanuku.wav" type="audio/wav">
+    </audio>
+    <audio id="hiwaiterangiAudio">
+        <source src="Hiwaiterangi.wav" type="audio/wav">
+    </audio>
+    <audio id="matarikiAudio">
+        <source src="Matariki.wav" type="audio/wav">
+    </audio>
+    <audio id="pohutukawaAudio">
+        <source src="Pohutukawa.wav" type="audio/wav">
+    </audio>
+    <audio id="tipuarangiAudio">
+        <source src="Tipuarangi.wav" type="audio/wav">
+    </audio>
+    <audio id="ururangiAudio">
+        <source src="Ururangi.wav" type="audio/wav">
+    </audio>
+    <audio id="waipunarangiAudio">
+        <source src="Waipunarangi.wav" type="audio/wav">
+    </audio>
+    <audio id="waitaAudio">
+        <source src="Waita.wav" type="audio/wav">
+    </audio>
+    <audio id="waitiAudio">
+        <source src="Waiti.wav" type="audio/wav">
+    </audio>
+
+    <script src="game.js"></script>
+</body>
+</html>
