@@ -1,72 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hopukina ngā Whetū o Matariki</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Matariki Game</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/tesseract.js@4/dist/tesseract.min.js"></script>
 </head>
-<body>
+<body class="bg-gradient-to-b from-blue-700 to-indigo-900 text-white font-sans">
 
-    <!-- Home Screen -->
-    <div id="homeScreen" class="screen">
-        <h1 class="title-main">Hopukina ngā Whetū o Matariki</h1>
-        <h2 class="title-sub">Catch the Stars of Matariki</h2>
-        <div class="leaderboard">
-            <h3>Top Scorers</h3>
-            <ol id="leaderboardList">
-                <!-- Scores will be populated by JS -->
-            </ol>
-        </div>
-        <button id="startButton" class="btn">Click to Get Started</button>
-    </div>
+  <!-- HOME SCREEN -->
+  <div id="homeScreen" class="screen flex flex-col items-center justify-center min-h-screen space-y-6">
+    <h1 class="text-4xl font-bold">Matariki Flappy Game</h1>
+    <ul id="leaderboardList" class="bg-white text-black p-4 rounded w-64 text-left space-y-2"></ul>
+    <button id="startButton" class="bg-green-500 px-6 py-3 rounded text-white hover:bg-green-600">Click to Get Started</button>
+  </div>
 
-    <!-- Scan ID Screen -->
-    <div id="scanScreen" class="screen" style="display: none;">
-        <h2>Scan ID to Get Started</h2>
-        <p>(Enter your name below)</p>
-        <video id="cameraFeed" width="300" height="225" autoplay playsinline muted></video>
-        <div class="input-group">
-            <input type="text" id="playerNameInput" placeholder="Enter Your Name">
-            <button id="submitNameButton" class="btn">Start</button>
-        </div>
-    </div>
+  <!-- SCAN SCREEN -->
+  <div id="scanScreen" class="screen hidden flex-col items-center justify-center min-h-screen space-y-4">
+    <video id="cameraFeed" autoplay playsinline class="rounded border-4 border-yellow-400 w-80 h-56"></video>
+    <div id="scanStatus" class="text-lg text-yellow-200"></div>
+    <button id="retryButton" class="hidden bg-yellow-500 px-4 py-2 rounded">Try Again</button>
+    <button id="returnHomeButton" class="hidden bg-gray-600 px-4 py-2 rounded">Return Home</button>
+  </div>
 
-    <!-- Welcome Screen -->
-    <div id="welcomeScreen" class="screen" style="display: none;">
-        <h2 id="welcomeMessage"></h2>
-        <p>Get Ready!</p>
-        <h1 id="countdown">5</h1>
-    </div>
+  <!-- WELCOME SCREEN -->
+  <div id="welcomeScreen" class="screen hidden flex flex-col items-center justify-center min-h-screen space-y-4">
+    <h2 id="welcomeMessage" class="text-3xl font-bold">Welcome!</h2>
+    <div class="text-2xl">Game starts in <span id="countdown">5</span>...</div>
+  </div>
 
-    <!-- Game Over Screen -->
-    <div id="gameOverScreen" class="screen" style="display: none;">
-        <h2>Game Over</h2>
-        <p id="finalScore"></p>
-        <p id="playerRank"></p>
-        <button id="homeButton" class="btn">Return to Home</button>
-    </div>
+  <!-- GAMEOVER SCREEN -->
+  <div id="gameOverScreen" class="screen hidden flex flex-col items-center justify-center min-h-screen space-y-4">
+    <h2 class="text-3xl font-bold">Game Over!</h2>
+    <div id="finalScore" class="text-xl"></div>
+    <div id="playerRank" class="text-lg"></div>
+    <button id="homeButton" class="bg-blue-500 px-4 py-2 rounded hover:bg-blue-600">Back to Home</button>
+  </div>
 
-    <!-- Game Canvas -->
-    <canvas id="gameCanvas" width="400" height="600"></canvas>
+  <!-- GAME CANVAS -->
+  <canvas id="gameCanvas" width="800" height="500" class="hidden mx-auto border-4 border-white rounded-lg"></canvas>
 
-    <!-- Audio Elements -->
-    <audio id="backgroundMusic" loop>
-        <source src="background_music.mp3" type="audio/mpeg">
-    </audio>
-    <audio id="tipuanukuAudio"><source src="Tipuanuku.wav" type="audio/wav"></audio>
-    <audio id="hiwaiterangiAudio"><source src="Hiwaiterangi.wav" type="audio/wav"></audio>
-    <audio id="matarikiAudio"><source src="Matariki.wav" type="audio/wav"></audio>
-    <audio id="pohutukawaAudio"><source src="Pohutukawa.wav" type="audio/wav"></audio>
-    <audio id="tipuarangiAudio"><source src="Tipuarangi.wav" type="audio/wav"></audio>
-    <audio id="ururangiAudio"><source src="Ururangi.wav" type="audio/wav"></audio>
-    <audio id="waipunarangiAudio"><source src="Waipunarangi.wav" type="audio/wav"></audio>
-    <audio id="waitaAudio"><source src="Waita.wav" type="audio/wav"></audio>
-    <audio id="waitiAudio"><source src="Waiti.wav" type="audio/wav"></audio>
+  <!-- AUDIO ASSETS -->
+  <audio id="backgroundMusic" src="background-music.mp3" loop></audio>
+  <audio id="tipuanukuAudio" src="tipuanuku.mp3"></audio>
+  <audio id="hiwaiterangiAudio" src="hiwaiterangi.mp3"></audio>
+  <audio id="matarikiAudio" src="matariki.mp3"></audio>
+  <audio id="pohutukawaAudio" src="pohutukawa.mp3"></audio>
+  <audio id="tipuarangiAudio" src="tipuarangi.mp3"></audio>
+  <audio id="ururangiAudio" src="ururangi.mp3"></audio>
+  <audio id="waipunarangiAudio" src="waipunarangi.mp3"></audio>
+  <audio id="waitaAudio" src="waita.mp3"></audio>
+  <audio id="waitiAudio" src="waiti.mp3"></audio>
 
-    <script src="game.js"></script>
+  <script src="game.js"></script>
 </body>
 </html>
