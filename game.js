@@ -202,8 +202,6 @@ document.addEventListener('keydown', function(event) {
 
 // --- GAME LOGIC ---
 
-class Particle { /* ... (Particle class is unchanged) ... */ }
-// For brevity, the Particle class is omitted here but should be copied from the original file.
 class Particle {
     constructor(x, y) {
         this.x = x;
